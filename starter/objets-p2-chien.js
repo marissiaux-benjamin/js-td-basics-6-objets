@@ -23,4 +23,4 @@ const chien = {
 
 console.log(`${chien.nom} est un ${chien.race} de couleur ${chien.couleur}`);
 
-console.log(`Tiens, un chat ! ${this.nom} aboie : ${chien.aboyer()}`);
+console.log(`Tiens, un chat ! ${chien.nom} aboie : ${chien.aboyer()}`);
