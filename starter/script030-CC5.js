@@ -20,9 +20,40 @@ Implémente un calculateur de pourboire en utilisant les objets et les boucles.
     1°) un nouveau tableau qui contient toutes les factures
     2°) un tableau qui contient les montants finaux payés (facture + pourboire).
 AIDE : Commence avec deux tableaux vides en tant que propriétés
-        et remplis-les dans la boucle
+        et remplis-les dans la boucle*/
 
-BONUS (EXTRA) APRÈS AVOIR FINI :
+const calculeFactures = {
+    factures: [124, 48, 268, 180, 42],
+    pourBoire : [],
+    montantFinaux :[],
+
+    calculePourboir(){
+
+        this.factures.forEach(facture => {
+            if (50 > facture){
+                this.pourBoire.push(Math.ceil(facture * 0.2));
+                return this.montantFinaux.push(Math.ceil(facture * 0.2) + facture);
+            }
+            if (50 < facture && facture < 200){
+                this.pourBoire.push(Math.ceil(facture * 0.15));
+                return  this.montantFinaux.push(Math.ceil(facture * 0.15) + facture);
+            }
+            if (facture > 200){
+                this.pourBoire.push(Math.ceil(facture * 0.1));
+                return this.montantFinaux.push(Math.ceil(facture * 0.1) + facture);
+            }
+        });
+    }
+};
+
+calculeFactures.calculePourboir();
+console.log(`Les montants sans pourboire : ${calculeFactures.pourBoire}`);
+console.log(`Les montants avec les pouboires : ${calculeFactures.montantFinaux}`)
+
+
+
+
+/*BONUS (EXTRA) APRÈS AVOIR FINI :
 
 La famille de Mark est aussi partie en vacances, et est allée dans 4 restaurants différents.
 Les factures ont été de $77, $375, $110, et $45.
