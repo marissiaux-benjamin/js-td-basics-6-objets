@@ -2,8 +2,30 @@
 OBJETS - PRÉPA 1 : Création d'un personnage
 Aurora est représentée par un objet aurora ayant quatre propriétés : nom, sante, force et xp (expérience).
 Elles ont chacune une valeur et, ensemble, définissent l'état de notre personnage à un instant donné.
-Aurora s'apprête à vivre une longue série d'aventures, dont certaines pourront modifier ses caractéristiques.
-1. Crée un objet nommé aurora contenant les propriétés nom, sante, force et xp
+Aurora s'apprête à vivre une longue série d'aventures, dont certaines pourront modifier ses caractéristiques.*/
+
+const aurora = {
+    nom : "Aurora",
+    sante : 150,
+    force : 25,
+    xp : 0,
+    decrire(){
+        return `${this.nom} a ${this.sante} points de vie, ${this.force} en force et ${this.xp} points d'expérience`;
+    }
+}
+console.log(aurora.decrire());
+console.log(`Aurora apprends une nouvelle compétense!`);
+aurora.xp = aurora.xp + 15;
+console.log(aurora.decrire());
+console.log('Aurora est blessée par ue flèche');
+aurora.sante = aurora.sante - 20;
+console.log(aurora.decrire());
+console.log('Aurora trouve un bracelet de force!');
+aurora.force = aurora.force + 10;
+console.log(aurora.decrire());
+
+
+/*1. Crée un objet nommé aurora contenant les propriétés nom, sante, force et xp
    avec les valeurs "Aurora", 150, 25 et 0
 2. Ajoute à cet objet une méthode decrire()
    qui retourne "… a … points de vie, … en force et … points d'expérience"
