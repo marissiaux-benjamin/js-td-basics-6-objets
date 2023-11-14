@@ -20,6 +20,10 @@ const mesFruits = {
   "Ananas": 3
 };
 
+for (const fruits in mesFruits) {
+  console.log(`Le fruit ${fruits} coûte ${mesFruits[fruits]} € `);
+}
+
 // Écris ton code ici
 
 /*
@@ -35,6 +39,13 @@ const fruit = {
 
 // Écris ton code ici
 
+for (const lesfruits in fruit) {
+  console.log(`${lesfruits} : ${fruit[lesfruits]}`);
+}
+
+
+
+
 // Un mot est un objet de type String => ceci fonctionne également…
 /*
 EXERCICE 3 :
@@ -43,3 +54,6 @@ Parcours le mot "Bonjour" pour afficher séparément chacune de ses lettres
 const mot = "Bonjour";
 
 // Écris ton code ici
+for (const lettres in mot) {
+  console.log(`${mot[lettres]}`);
+}
