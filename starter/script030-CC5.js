@@ -22,36 +22,30 @@ Implémente un calculateur de pourboire en utilisant les objets et les boucles.
 AIDE : Commence avec deux tableaux vides en tant que propriétés
         et remplis-les dans la boucle*/
 
-const calculeFactures = {
-    factures: [124, 48, 268, 180, 42],
-    pourBoire : [],
-    montantFinaux :[],
+const factures = {
+    prices: [124, 48, 268, 180, 42],
+    tips: [],
+    generateTips() {
+        this.prices.forEach((p) => {
+            this.addTips(p);
+        })
+    },
 
-    calculePourboir(){
-
-        this.factures.forEach(facture => {
-            if (50 > facture){
-                this.pourBoire.push(Math.ceil(facture * 0.2));
-                return this.montantFinaux.push(Math.ceil(facture * 0.2) + facture);
-            }
-            if (50 < facture && facture < 200){
-                this.pourBoire.push(Math.ceil(facture * 0.15));
-                return  this.montantFinaux.push(Math.ceil(facture * 0.15) + facture);
-            }
-            if (facture > 200){
-                this.pourBoire.push(Math.ceil(facture * 0.1));
-                return this.montantFinaux.push(Math.ceil(facture * 0.1) + facture);
-            }
-        });
-    }
+    addTips(price) {
+        console.log(price);
+        if (price < 100) {
+            this.tips.push(price * 0.2);
+        }
+        if (100 >= price && price <= 300) {
+            this.tips.push(price * 0.1);
+        }
+        if (price > 300) {
+            this.tips.push(price * 0.25);
+        }
+    },
 };
 
-calculeFactures.calculePourboir();
-console.log(`Les montants sans pourboire : ${calculeFactures.pourBoire}`);
-console.log(`Les montants avec les pouboires : ${calculeFactures.montantFinaux}`)
-
-
-
+factures.generateTips();
 
 /*BONUS (EXTRA) APRÈS AVOIR FINI :
 
